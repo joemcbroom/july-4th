@@ -167,7 +167,10 @@ const submitRsvp = async () => {
         Submit
       </button>
     </form>
-    <div class="text-lg flex flex-col items-center gap-4 mt-4" v-else>
+    <div
+      class="text-lg flex flex-col items-center gap-4 mt-4 text-center"
+      v-else
+    >
       <div>Your RSVP has been submitted successfully!</div>
       <div>We look forward to seeing you there!</div>
       <a
