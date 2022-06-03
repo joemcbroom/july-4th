@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import RSVPViewVue from '../views/RSVPView.vue';
+import AdminViewVue from '../views/AdminView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,12 +14,12 @@ const router = createRouter({
     {
       path: '/rsvp',
       name: 'rsvp',
-      component: () => import('../views/RSVPView.vue'),
+      component: RSVPViewVue,
     },
     {
       path: '/admin',
       name: 'admin',
-      component: () => import('../views/AdminView.vue'),
+      component: RSVPViewVue,
     },
   ],
 });
