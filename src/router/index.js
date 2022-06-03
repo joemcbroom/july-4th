@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: '/admin',
       name: 'admin',
-      component: RSVPViewVue,
+      component: AdminViewVue,
     },
   ],
 });
