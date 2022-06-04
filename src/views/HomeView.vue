@@ -7,7 +7,7 @@ const welcomeTextArray = [
   "You're invited",
   'To an indepedence day',
   'Celebration!',
-  'Sunday, July 2nd 2022',
+  'Saturday, July 2nd 2022',
   'at the McBroom Household',
 ];
 
