@@ -137,7 +137,7 @@ const submitRsvp = async () => {
         label="Dish (optional)"
         placeholder="Chips, Cupcakes, Beer, etc."
       />
-      <div class="text-xs">
+      <div class="text-xs select-none">
         Click
         <span @click="handleDishes" class="text-teal-500 underline font-bold">
           here
