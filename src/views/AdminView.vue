@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import FormInput from '@/components/FormInput.vue';
 import RsvpList from '@/components/RsvpList.vue';
+
+const isDevEnv = ref(false);
 
 const correctPassword = 'McBroom10';
 const showPasswordInput = ref(true);
@@ -12,10 +14,14 @@ const submitPassword = () => {
     showPasswordInput.value = false;
   }
 };
+
+onMounted(() => {
+  isDevEnv.value = import.meta.env.DEV;
+});
 </script>
 
 <template>
-  <div v-if="showPasswordInput">
+  <div v-if="showPasswordInput && !isDevEnv">
     <form-input
       v-model="password"
       label="Password"

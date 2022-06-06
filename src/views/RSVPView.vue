@@ -46,6 +46,11 @@ const checkForSubmission = async () => {
   }
 };
 
+const handleEditRsvp = () => {
+  hasSubmission.value = true;
+  showSuccessMessage.value = false;
+};
+
 const validateRsvpForm = computed(() => {
   const { email, name, numberOfAdults } = rsvpFormData;
   return email && name && numberOfAdults;
@@ -173,6 +178,8 @@ const submitRsvp = async () => {
     >
       <div>Your RSVP has been submitted successfully!</div>
       <div>We look forward to seeing you there!</div>
+      <div>Saturday, July 2nd, 2022</div>
+      <div>5PM</div>
       <a
         class="text-center text-lg text-teal-300 font-bold underline font-sans"
         href="https://www.google.com/maps/place/4015+Marsol+Ave,+Grove+City,+OH+43123/@39.8873554,-83.1114932,17z/data=!4m5!3m4!1s0x88389b104ec01a83:0x1cd3d603f6f71ad0!8m2!3d39.8874213!4d-83.1095406"
@@ -182,7 +189,7 @@ const submitRsvp = async () => {
       </a>
       <button
         class="w-full bg-teal-700 px-3 py-1 mt-4 rounded font-sans"
-        @click="showSuccessMessage = false"
+        @click="handleEditRsvp"
       >
         Edit RSVP
       </button>
