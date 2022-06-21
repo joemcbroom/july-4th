@@ -17,8 +17,8 @@ const settings = {
 const formatData = data => {
   const columnNames = Object.keys(data[0]);
   return [[...columnNames], ...data.map(row => Object.values(row))].map(arr => {
-    //remove created_at
-    arr.splice(1, 1);
+    //remove created_at and id
+    arr.splice(0, 2);
     return arr;
   });
 };
