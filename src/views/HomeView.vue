@@ -61,5 +61,11 @@ onMounted(() => {
     >
       RSVP
     </button>
+    <button
+      class="bg-transparent text-transparent w-4 absolute top-0 right-0"
+      @click="$router.push('admin?admin=true')"
+    >
+      Super Secret Admin Button
+    </button>
   </div>
 </template>

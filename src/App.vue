@@ -30,7 +30,7 @@ onMounted(() => {
   <main
     class="relative min-h-screen w-screen bg-slate-800 grid place-items-center"
   >
-    <RouterView class="z-10" />
+    <router-view class="z-10" />
     <div id="fireworks" class="absolute w-screen h-screen m-auto z-0" />
   </main>
 </template>
