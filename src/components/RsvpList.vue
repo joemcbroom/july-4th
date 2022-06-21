@@ -45,7 +45,7 @@ onMounted(async () => {
 
 const getTotal = property => {
   const total = data.value.reduce((acc, row) => {
-    return acc + row[property];
+    return acc + (row.attending && row[property]);
   }, 0);
 
   return total;

@@ -1,8 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
 import lottie from 'lottie-web';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import fireworks from '@/assets/7393-fireworks.json';
+import router from './router';
+
+const keysPressed = ref('');
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 onMounted(() => {
   lottie.loadAnimation({
     container: document.getElementById('fireworks'),
@@ -10,6 +14,14 @@ onMounted(() => {
     loop: true,
     autoplay: true,
     animationData: fireworks,
+  });
+  window.addEventListener('keyup', e => {
+    if (alphabet.includes(e.key)) {
+      keysPressed.value += e.key;
+    }
+    if (keysPressed.value.indexOf('admin') > -1) {
+      router.push('/admin?admin=true');
+    }
   });
 });
 </script>

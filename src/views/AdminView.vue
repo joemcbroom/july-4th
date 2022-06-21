@@ -2,12 +2,15 @@
 import { onMounted, ref } from 'vue';
 import FormInput from '@/components/FormInput.vue';
 import RsvpList from '@/components/RsvpList.vue';
+import { useRoute } from 'vue-router';
 
-const isDevEnv = ref(false);
+const isDevEnvOrAdmin = ref(false);
 
 const correctPassword = 'McBroom10';
 const showPasswordInput = ref(true);
 const password = ref('');
+
+const route = useRoute();
 
 const submitPassword = () => {
   if (password.value === correctPassword) {
@@ -16,12 +19,12 @@ const submitPassword = () => {
 };
 
 onMounted(() => {
-  isDevEnv.value = import.meta.env.DEV;
+  isDevEnvOrAdmin.value = import.meta.env.DEV || route.query.admin;
 });
 </script>
 
 <template>
-  <div v-if="showPasswordInput && !isDevEnv">
+  <div v-if="showPasswordInput && !isDevEnvOrAdmin">
     <form-input
       v-model="password"
       label="Password"
